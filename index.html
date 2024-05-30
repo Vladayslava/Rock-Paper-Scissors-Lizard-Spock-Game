@@ -3,34 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Meta tags for search engines -->
+    <meta name="description"
+    content="Addictive 'rock-paper-scissors-lizard-spock' game with ten game attempts">
+    <meta name="keywords" content="game, entertainment, competition, tournament, victory, defeat">
+    <!-- Title -->
+    <title>Game rock-paper-scissors-lizard-spock</title>
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
 </head>
 <body>
-    <h1 class="heading"></h1>
-    <div class="game-area">
-        <div class="controls-area">
-            <button data-type="rock" class="btn">
-                <i class="fa-regular fa-hand-back-fist"></i>
-            </button>
-            <button data-type="paper" class="btn">
-                <i class="fa-regular fa-hand"></i>
-            </button>
-            <button data-type="scissors" class="btn">
-                <i class="fa-regular fa-hand-scissors"></i>
-            </button>
-            <button data-type="lizard" class="btn">
-                <i class="fa-regular fa-hand-lizard"></i>
-            </button>
-            <button data-type="spock" class="btn">
-                <i class="fa-regular fa-hand-spock"></i>
-            </button>
+    <header></header>
+    <main>    
+        <h1 class="heading">Rock-Paper-Scissors-Lizard-Spock</h1>
+        <div class="game-area">
+            <div class="controls-area">
+                <button data-type = "rock" class="btn">
+                    <i class="fa-regular fa-hand-back-fist"></i>
+                </button>
+                <button data-type = "paper" class="btn">
+                    <i class="fa-regular fa-hand"></i>
+                </button>
+                <button data-type = "scissors" class="btn">
+                    <i class="fa-regular fa-hand-scissors"></i>
+                </button>
+                <button data-type = "lizard" class="btn">
+                    <i class="fa-regular fa-hand-lizard"></i>
+                </button>
+                <button data-type = "spock" class="btn">
+                    <i class="fa-regular fa-hand-spock"></i>
+                </button>
+            </div>
         </div>
-        <div class="visual-area"></div>
-    </div>
-
-    <div class="score-area"></div>
-
+    
+        <div class="score-area">
+            <div class="player">PLAYER:</div>
+            <div class="computer">COMPUTER:</div>
+        </div>
+    </main>
+    <footer></footer>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
