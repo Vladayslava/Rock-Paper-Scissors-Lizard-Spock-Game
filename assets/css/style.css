@@ -19,8 +19,7 @@ body{
 .btn{
     border-radius: 5px;
     color: white;
-    transition: .2s linear;
-    background: #0B63F6;
+    background: #0a90def0;
     padding: 1rem;
     font-size: 1.3em;
     cursor: pointer;
@@ -41,6 +40,9 @@ body{
     width: 50%;
     gap: 13px;
 }
+.controls-area button:hover{
+    transform: scale(1.1);
+}
 .controls-area button{
     font-size: 2.3em;
 }
@@ -50,16 +52,17 @@ body{
     gap: 13px;
 }
 .showing-area{
-    display: flex;
-    justify-content: center;
+    display: grid;
     border-radius: 5px;
     color: white;
-    transition: .2s linear;
-    background: #0B63F6;
-    padding: 1rem;
-    font-size: 1.3em;
+    background: #0a90def0;
     width: 50%;
-    gap: 13px;
+    padding: 1.5rem;
+    font-size: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    height: 140px;
+    align-items: center;
 }
 .score-area{
     font-size: 1.5rem;
@@ -78,4 +81,10 @@ body{
 }
 .btn_next_round{
     margin-top: 15px;
+}
+.weapon{
+    opacity: .6;
+}
+.weapon.winner{
+    opacity: 1;
 }

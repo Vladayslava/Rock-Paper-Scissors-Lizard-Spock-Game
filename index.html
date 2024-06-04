@@ -88,43 +88,53 @@
 			    <button type="button" name="button" class="btn">New game</button>
 		    </div>
             <div class="btn_start">
-			    <button type="button" name="button" class="btn">Start</button>
-		    </div>
+                <button type="button" name="button" class="btn">Start</button>
+            </div>
         </div>
         <div class="game-area">
             <div class="controls-area">
                 <div class="top-buttons">
-                    <button data-type = "rock" class="btn">
-                        <i class="fa-regular fa-hand-back-fist"></i>
+                    <button data-type = "rock" class="btn selection">
+                        👊
                     </button>
-                    <button data-type = "paper" class="btn">
-                        <i class="fa-regular fa-hand"></i>
+                    <button data-type = "paper" class="btn selection">
+                        ✋
                     </button>
-                    <button data-type = "scissors" class="btn">
-                        <i class="fa-regular fa-hand-scissors"></i>
+                    <button data-type = "scissors" class="btn selection">
+                        ✌️
                     </button>
                 </div>
                 <div class="bottom-buttons">
-                    <button data-type = "lizard" class="btn">
-                        <i class="fa-regular fa-hand-lizard"></i>
+                    <button data-type = "lizard" class="btn selection">
+                        🦎
                     </button>
-                    <button data-type = "spock" class="btn">
-                        <i class="fa-regular fa-hand-spock"></i>
+                    <button data-type = "spock" class="btn selection">
+                        🖖
                     </button>
                 </div>
             </div>
             <div class="showing-area">
-                <div class="user_weapon"><i class="fa-regular fa-hand-back-fist"></i></div>
-                <div class="computer_weapon"><i class="fa-regular fa-hand-back-fist"></i></div>
+                <!-- <div class="weapon winner"> 
+                    👊
+                </div>
+                <div class="weapon"> 
+                    ✌️
+                </div> -->
             </div>
         </div>
         <div class="btn_next_round">
 			<button type="button" name="button" class="btn">Next round</button>
 		</div>
         <div class="score-area">
-            <div class="player">PLAYER:</div>
+            <div> PLAYER:
+                <span class="result_score">0</span>
+            </div>
             <br>
-            <div class="computer">COMPUTER:</div>
+            <div> COMPUTER:
+                <span class="result_score">0</span>
+            </div>
+            <br>
+            <div class="resultDisplay"></div>
         </div>
     </main>
     <footer></footer>
