@@ -1,4 +1,6 @@
 const controlsButtons = document.querySelectorAll('[data-type]');
+let playerScore = 0;
+let computerScore = 0;
 
 controlsButtons.forEach(
     function (controlsButtons){
@@ -41,5 +43,29 @@ function getRandomChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
+function updateScores(winner){
+    if(winner==='user'){
+        playerScore++;
+        document.getElementsByClassName('player_score')[0].textContent = playerScore;
+        console.log(document.getElementsByClassName('player_score')[0].textContent);
+    }
+    else if(winner==='computer'){
+        computerScore++;
+        document.getElementsByClassName('computer_score')[0].textContent = computerScore;
+        console.log(document.getElementsByClassName('computer_score')[0].textContent);
+    }
+}
 
+function displayResult(userChoice, computerChoice, winner){
+    const resultDisplay = document.querySelector('.resultDisplay');
+    if(winner === 'tie'){
+        resultDisplay.textContent = `It's a tie! Both chose ${userChoice}.`;
+    }
+    else if(winner === 'user'){
+        resultDisplay.textContent = `You win! ${userChoice} beats ${computerChoice}.`;
+    }
+    else{
+        resultDisplay.textContent = `You lose! ${computerChoice} beats ${userChoice}.`;
+    }
 
+}
