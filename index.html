@@ -85,10 +85,10 @@
             item you want to select. After this, the computer will select its item. The one who is more cunning wins.</p>
         <div class="btn_start_newgame">
             <div class="btn_new_game">
-			    <button type="button" name="button" class="btn">New game</button>
+			    <button type="button" name="button" id="new-game-btn" class="btn">New game</button>
 		    </div>
             <div class="btn_start">
-                <button type="button" name="button" class="btn">Start</button>
+                <button type="button" name="button" id="start-btn" class="btn">Start</button>
             </div>
         </div>
         <div class="game-area">
@@ -114,16 +114,16 @@
                 </div>
             </div>
             <div class="showing-area">
-                <!-- <div class="weapon winner"> 
-                    👊
+                <div class="weapon winner">
+                     <span id="player-current-choice"></span>
                 </div>
                 <div class="weapon"> 
-                    ✌️
-                </div> -->
+                    <span id="computer-current-choice"></span>
+                </div> 
             </div>
         </div>
         <div class="btn_next_round">
-			<button type="button" name="button" class="btn">Next round</button>
+			<button type="button" name="button" id="next-round-btn" class="btn">Next round</button>
 		</div>
         <div class="score-area">
             <div> PLAYER:
@@ -134,7 +134,7 @@
                 <span class="computer_score">0</span>
             </div>
             <br>
-            <div class="resultDisplay"></div>
+            <div id="final-result"></div>
         </div>
     </main>
     <footer></footer>

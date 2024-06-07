@@ -82,9 +82,3 @@ body{
 .btn_next_round{
     margin-top: 15px;
 }
-.weapon{
-    opacity: .6;
-}
-.weapon.winner{
-    opacity: 1;
-}
