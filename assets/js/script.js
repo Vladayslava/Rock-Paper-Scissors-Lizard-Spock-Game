@@ -1,14 +1,20 @@
-const controlsButtons = document.querySelectorAll('[data-type]');
-const maxRound = 10;
+/* jshint esversion:8 */
 let playerScore = 0;
 let computerScore = 0;
 let currentWinner;
 let currentRound = 0;
+const maxRound = 10;
+const controlsButtons = document.querySelectorAll('[data-type]');
 const playerCurrentChoice = document.getElementById('player-current-choice');
 const computerCurrentChoice = document.getElementById('computer-current-choice');
 const newGameBtn = document.getElementById('new-game-btn');
 const startBtn = document.getElementById('start-btn');
 const nextRoundBtn = document.getElementById('next-round-btn');
+const currentRoundContainer = document.getElementById('current-round');
+const resultDisplay = document.getElementById('final-result');
+const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+newGameBtn.style.display = 'none';
+nextRoundBtn.style.display = 'none';
 const emojiMap = {
     rock: '👊',
     paper: '✋',
@@ -16,17 +22,23 @@ const emojiMap = {
     lizard: '🦎',
     spock: '🖖'
 }
+const winningConditions = {
+    rock: ['scissors','lizard'],
+    paper: ['rock', 'spock'],
+    scissors: ['paper', 'lizard'],
+    lizard: ['spock', 'paper'],
+    spock: ['scissors', 'rock']
+};
 
 
+// переписать
 controlsButtons.forEach(
-    function (controlsButtons){
-        controlsButtons.addEventListener('click', function(event){
-            const controlsWeapon = controlsButtons.getAttribute('data-type');
+     function (controlsButtons){
+         controlsButtons.addEventListener('click', function(event){
+             const controlsWeapon = controlsButtons.getAttribute('data-type');
             makeSelection(controlsWeapon);
-            });
-        });
-function makeSelection(selection) {
-console.log(selection);}
+             });
+         });
 
 controlsButtons.forEach(
     function(button){
@@ -40,29 +52,38 @@ startBtn.addEventListener('click',
             function(button){
                 button.disabled = false;
             });
-            startBtn.disabled = true;
+            startBtn.style.display = 'none';
+            newGameBtn.style.display = 'none';
+            nextRoundBtn.style.display = 'block';
+            nextRoundBtn.disabled = true;
     });
-if(currentRound===maxRound){
-    controlsButtons.forEach(
-        function(buttons){
-            button.disabled = true;
-    });      
-        nextRoundBtn.disabled = false;
-}
 
-nextRoundBtn.addEventListener('click',
+newGameBtn.addEventListener('click',
     function(){
+        controlsButtons.forEach(
+              function(buttons){
+                  buttons.disabled = false;
+              });
         playerCurrentChoice.innerHTML = '';
         computerCurrentChoice.innerHTML = '';
-        nextRoundBtn.disabled = true;
-        controlsButtons.forEach(
-            function(buttons){
-                buttons.disabled = false;
-            })
+        playerScore = 0;
+        computerScore = 0;
+        document.getElementsByClassName('player_score')[0].textContent = playerScore;
+        document.getElementsByClassName('computer_score')[0].textContent = computerScore;
+        resultDisplay.innerHTML = '';
+        newGameBtn.style.display = 'none';
+        nextRoundBtn.style.display = 'block';
+        currentRound = 0;
+        currentRoundContainer.innerText = currentRound;
     })
 
+nextRoundBtn.addEventListener('click')
+/**
+ * 
+ */
 function makeSelection(userChoice){
     currentRound++;
+    currentRoundContainer.innerText = currentRound;
     console.log(currentRound);
     console.log(userChoice);
     playerCurrentChoice.innerHTML = emojiMap[userChoice];
@@ -73,19 +94,21 @@ function makeSelection(userChoice){
     updateScores(currentWinner);
     if(currentRound===maxRound){
         displayResult(playerScore, computerScore);
+        controlsButtons.forEach(
+            function(button){
+                button.disabled = true;
+                newGameBtn.style.display = 'block';
+                newGameBtn.disabled = false;
+                nextRoundBtn.style.display = 'none';
+        });      
+        console.log('button.disabled = true')
     }
 
 }
 
 function isWinner(userChoice, computerChoice){
 
-    const winningConditions = {
-        rock: ['scissors','lizard'],
-        paper: ['rock', 'spock'],
-        scissors: ['paper', 'lizard'],
-        lizard: ['spock', 'paper'],
-        spock: ['scissors', 'rock']
-    };
+
     if(userChoice===computerChoice){
         console.log('tie');
         return 'tie';
@@ -101,7 +124,6 @@ function isWinner(userChoice, computerChoice){
 }
 
 function getRandomChoice() {
-    const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
@@ -119,7 +141,6 @@ function updateScores(winner){
 }
 
 function displayResult(playerScore, computerScore){
-    const resultDisplay = document.getElementById('final-result');
     if(playerScore === computerScore){
         resultDisplay.textContent = `It's a tie!`;
     }
