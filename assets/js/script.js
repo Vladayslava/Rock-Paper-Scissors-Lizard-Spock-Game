@@ -33,51 +33,68 @@ const winningConditions = {
 
 // переписать
 controlsButtons.forEach(
-     function (controlsButtons){
-         controlsButtons.addEventListener('click', function(event){
-             const controlsWeapon = controlsButtons.getAttribute('data-type');
-            makeSelection(controlsWeapon);
-             });
-         });
-
-controlsButtons.forEach(
-    function(button){
-        button.disabled = true;
-    });
-nextRoundBtn.disabled = true;
-
-startBtn.addEventListener('click',
-    function(){
-        controlsButtons.forEach(
-            function(button){
-                button.disabled = false;
-            });
-            startBtn.style.display = 'none';
-            newGameBtn.style.display = 'none';
-            nextRoundBtn.style.display = 'block';
-            nextRoundBtn.disabled = true;
-    });
-
-newGameBtn.addEventListener('click',
-    function(){
-        controlsButtons.forEach(
-              function(buttons){
-                  buttons.disabled = false;
+      function (controlsButtons){
+          controlsButtons.addEventListener('click', function(event){
+            const controlsWeapon = controlsButtons.getAttribute('data-type');
+             makeSelection(controlsWeapon);
+             disableControlButtons();
               });
-        playerCurrentChoice.innerHTML = '';
-        computerCurrentChoice.innerHTML = '';
-        playerScore = 0;
-        computerScore = 0;
-        document.getElementsByClassName('player_score')[0].textContent = playerScore;
-        document.getElementsByClassName('computer_score')[0].textContent = computerScore;
-        resultDisplay.innerHTML = '';
+          });
+
+function disableControlButtons(){
+    controlsButtons.forEach(
+        function(button){
+            button.disabled = true;
+            nextRoundBtn.disabled = false;
+    });  
+
+}
+
+nextRoundBtn.addEventListener('click', nextRound)
+
+function nextRound(){
+    controlsButtons.forEach(
+        function(button){
+            button.disabled = false;
+            nextRoundBtn.disabled = true;
+    });  
+}
+
+startBtn.addEventListener('click',startGame);
+
+function startGame(){
+    controlsButtons.forEach(
+        function(button){
+            button.disabled = false;
+        });
+        startBtn.style.display = 'none';
+        newGameBtn.style.display = 'none';
         newGameBtn.style.display = 'none';
         nextRoundBtn.style.display = 'block';
-        currentRound = 0;
-        currentRoundContainer.innerText = currentRound;
-    })
+        nextRoundBtn.disabled = false;
+}
 
-nextRoundBtn.addEventListener('click')
+newGameBtn.addEventListener('click',newGame)
+
+function newGame(){
+    controlsButtons.forEach(
+          function(buttons){
+              buttons.disabled = false;
+          });
+    playerCurrentChoice.innerHTML = '';
+    computerCurrentChoice.innerHTML = '';
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementsByClassName('player_score')[0].textContent = playerScore;
+    document.getElementsByClassName('computer_score')[0].textContent = computerScore;
+    resultDisplay.innerHTML = '';
+    newGameBtn.style.display = 'none';
+    nextRoundBtn.style.display = 'block';
+    currentRound = 0;
+    currentRoundContainer.innerText = currentRound;
+}
+
+
 /**
  * 
  */
