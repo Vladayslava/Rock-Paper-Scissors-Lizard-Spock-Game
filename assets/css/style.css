@@ -1,3 +1,4 @@
+
 h1, h2, h3 {
     font-size: 2rem;
     color: #252525;
@@ -13,14 +14,14 @@ img{
 }
 
 body{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif; 
     margin-left: 15%;
     margin-right: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: #eeeeeec7;
-}
+    }
 .btn, .round-count{
     border-radius: 5px;
     color: white;
@@ -161,5 +162,9 @@ body{
     }
     .btn{
         padding: 0.8rem;
+    }
+    .btn_start, .round-count {
+        flex: 0.6;
+        align-items: center;
     }
 }
