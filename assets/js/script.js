@@ -13,8 +13,8 @@ const nextRoundBtn = document.getElementById('next-round-btn');
 const currentRoundContainer = document.getElementById('current-round');
 const resultDisplay = document.getElementById('final-result');
 const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
-newGameBtn.style.display = 'none';
-nextRoundBtn.style.display = 'none';
+newGameBtn.style.visibility = 'hidden';
+nextRoundBtn.style.visibility = 'hidden';
 const emojiMap = {
     rock: '👊',
     paper: '✋',
@@ -67,10 +67,10 @@ function startGame(){
         function(button){
             button.disabled = false;
         });
-        startBtn.style.display = 'none';
-        newGameBtn.style.display = 'none';
-        newGameBtn.style.display = 'none';
-        nextRoundBtn.style.display = 'block';
+        startBtn.style.visibility = 'hidden';
+        newGameBtn.style.visibility = 'hidden';
+        newGameBtn.style.visibility = 'hidden';
+        nextRoundBtn.style.visibility = 'visible';
         nextRoundBtn.disabled = false;
 }
 
@@ -88,8 +88,8 @@ function newGame(){
     document.getElementsByClassName('player_score')[0].textContent = playerScore;
     document.getElementsByClassName('computer_score')[0].textContent = computerScore;
     resultDisplay.innerHTML = '';
-    newGameBtn.style.display = 'none';
-    nextRoundBtn.style.display = 'block';
+    newGameBtn.style.visibility = 'hidden';
+    nextRoundBtn.style.visibility = 'visible';
     currentRound = 0;
     currentRoundContainer.innerText = currentRound;
 }
@@ -114,9 +114,9 @@ function makeSelection(userChoice){
         controlsButtons.forEach(
             function(button){
                 button.disabled = true;
-                newGameBtn.style.display = 'block';
+                newGameBtn.style.visibility = 'visible';
                 newGameBtn.disabled = false;
-                nextRoundBtn.style.display = 'none';
+                nextRoundBtn.style.visibility = 'hidden';
         });      
         console.log('button.disabled = true')
     }

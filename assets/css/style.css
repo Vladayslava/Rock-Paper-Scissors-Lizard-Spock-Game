@@ -8,13 +8,18 @@ li{
 p{
     font-size: 1.3rem;
 }
+img{
+    width:60%;
+}
+
 body{
     font-family: 'Times New Roman', Times, serif;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 15%;
+    margin-right: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: #eeeeeec7;
 }
 .btn, .round-count{
     border-radius: 5px;
@@ -83,7 +88,7 @@ body{
     margin-top: 15px;
 }
 .btn_start, .round-count{
-    flex: 1;
+    flex: 0.8;
     display: flex;
     justify-content: center;
 }
@@ -91,4 +96,70 @@ body{
     flex: 1;
     display: flex;
     justify-content: flex-start;
+}
+@media (max-width:768px) {
+    body {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+
+    li, p {
+        font-size: 1.2rem;
+    }
+
+    .game-area {
+        flex-direction: column;
+    }
+    .showing-area{
+        margin-top: 1rem;
+        width: 80%;
+    }
+    .game-area{
+        padding: 25px;
+    }
+     .top-buttons, .bottom-buttons {
+        gap: 40px;
+        display: flex;
+    } 
+    .controls-area button {
+        font-size: 2.7rem;
+    }
+}
+
+@media (max-width:480px) {
+    h1, h2, h3 {
+        font-size: 1.2rem;
+    }
+
+    li, p {
+        font-size: 0.9rem;
+    }
+    img {
+        width: 80%;
+    }
+    .btn, .round-count {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    .showing-area{
+        margin: 0;
+    }
+    .top-buttons, .bottom-buttons {
+        display: flex;
+        gap: 13px;
+    }
+    .controls-area button {
+        font-size: 2rem;
+    }
+    .score-area {
+        font-size: 1rem;
+        margin: 30px 0px;
+    }
+    .btn{
+        padding: 0.8rem;
+    }
 }
