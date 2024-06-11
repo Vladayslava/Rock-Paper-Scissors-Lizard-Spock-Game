@@ -21,7 +21,7 @@ const emojiMap = {
     scissors: '✌️',
     lizard: '🦎',
     spock: '🖖'
-}
+};
 const winningConditions = {
     rock: ['scissors','lizard'],
     paper: ['rock', 'spock'],
@@ -35,20 +35,28 @@ controlsButtons.forEach(
         button.disabled = true;
 });
 
+// controlsButtons.forEach(
+//     function (controlsButtons){
+//         controlsButtons.addEventListener('click', function(event){
+//           const controlsWeapon = controlsButtons.getAttribute('data-type');
+//            makeSelection(controlsWeapon);
+//            disableControlButtons();
+//             });
+//         });
+
 controlsButtons.forEach(showingButtons);
 
-/**The function adds an event handler for control buttons by calling the allButtons function */
-function showingButtons(controlsButtons){
-    controlsButtons.addEventListener('click', allButtons);
-    };
 /**The function retrieves the value of the data-type attribute from the controlsButtons element.
 Calls the makeSelection function with this value.
 Calls the disableControlButtons function */
-function allButtons(event){
-    const controlsWeapon = controlsButtons.getAttribute('data-type');
-    makeSelection(controlsWeapon);
-    disableControlButtons();
-    };
+function showingButtons(controlsButtons){
+    controlsButtons.addEventListener('click', function(event){
+        const controlsWeapon = controlsButtons.getAttribute('data-type');
+        makeSelection(controlsWeapon);
+        disableControlButtons();
+});
+    }
+
 /**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
 function disableControlButtons(){
     controlsButtons.forEach(
@@ -57,7 +65,7 @@ function disableControlButtons(){
             nextRoundBtn.disabled = false;
     });  
 
-};
+}
 
 nextRoundBtn.addEventListener('click', nextRound);
 /**The function iterates over all controlsButtons elements and for each element:
@@ -69,7 +77,7 @@ function nextRound(){
             button.disabled = false;
             nextRoundBtn.disabled = true;
     });  
-};
+}
 
 startBtn.addEventListener('click',startGame);
 /**The function enables the game control buttons 
@@ -84,7 +92,7 @@ function startGame(){
         newGameBtn.style.visibility = 'hidden';
         nextRoundBtn.style.visibility = 'visible';
         nextRoundBtn.disabled = false;
-};
+}
 
 newGameBtn.addEventListener('click',newGame);
 /**The function is used to start a new game. It resets the current results, sets player and computer scores to zero,
@@ -105,7 +113,7 @@ function newGame(){
     nextRoundBtn.style.visibility = 'visible';
     currentRound = 0;
     currentRoundContainer.innerText = currentRound;
-};
+}
 /**
 *This function handles the user's selection in the "rock-paper-scissors-lizard-Spock" game. 
 *It increments the current round, displays the player's and computer's choices, determines the winner of the current round, 
@@ -131,8 +139,7 @@ function makeSelection(userChoice){
                 nextRoundBtn.style.visibility = 'hidden';
         });      
     }
-
-};
+}
 /**This function determines the winner in a game between the user and the computer based on their choices. 
  * If the user's choice and the computer's choice are the same, the function returns 'tie'. 
  * If the user's choice beats the computer's choice according to pre-defined conditions (winningConditions), the function returns 'user'. 
@@ -147,11 +154,11 @@ function isWinner(userChoice, computerChoice){
     else {
         return 'computer';
     }
-};
+}
 /**This function returns a random element from the array choices. */
 function getRandomChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
-};
+}
 /**This function updates the game scores based on the winner. If the winner is the user (winner equals 'user'), it increments the playerScore variable by 1 
  * and updates the text content of an element with the class 'player_score' with the new playerScore value. 
  * If the winner is the computer (winner equals 'computer'), it increments the computerScore variable by 1 
@@ -165,7 +172,7 @@ function updateScores(winner){
         computerScore++;
         document.getElementsByClassName('computer_score')[0].textContent = computerScore;
     }
-};
+}
 /**This function displays the result of a game between a player and a computer based on their scores. 
  * If the player's score equals the computer's score, the function displays "It's a tie!". 
  * If the player's score is greater than the computer's score, it displays "You win!". 
@@ -181,5 +188,5 @@ function displayResult(playerScore, computerScore){
         resultDisplay.textContent = `You lose!`;
     }
 
-};
+}
 
