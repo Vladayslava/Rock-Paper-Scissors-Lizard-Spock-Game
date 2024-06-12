@@ -1,39 +1,58 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Game rock-paper-scissors-lizard-spock
 
-Welcome,
+The "Game Rock-Paper-Scissors-Lizard-Spock" project is a modern twist on the classic game of Rock-Paper-Scissors, enhanced with new elements and strategies. Our goal is to create an engaging and educational game that not only provides entertainment but also helps develop logical thinking, strategic planning, and quick reflexes among players of all ages.
+The target audience for this project includes children, teenagers, and adults looking for an enjoyable pastime, as well as teachers and parents seeking to offer an educational activity to their wards.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+![Mockup](/assets/images/responcive.jpg)
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+## Features
+ ### The Start Button
+ - The "Start" button is designed to start the game. When the user clicks on this button, the following happens:
+    * The "weapon" buttons that the user will use to play the game are launched.
+    * The next round button appears.
 
-## Codeanywhere Reminders
+![The Start Button](/assets/images/btn-start.jpg)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+ ### The Weapon Selection Area
+ - This section will allow the user to play the game. The user will be able to easily see the weapon icons and select, as desired by clicking on the different icons.
 
-`python3 -m http.server`
+![The Weapon Selection Area](/assets/images/btns.jpg)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+ ### The Showing Area
+ - In this section, the user can see his choice of weapons and choice of computer. After selecting a user, the computer makes a random selection and displays icons.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+ ![The Showing Area](/assets/images/showing-area.jpg)
 
-`http_server`
+ ### The Next Round Button
+ - after the user selects a weapon, the selection buttons are blocked until the user presses the next round, after which the user and computer score is counted, as well as the attempt count is counted.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+  ![The Next Round Button](/assets/images/btn-next-round.jpg)
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+### Number of Attempts
+- In this area, the user can see how many times he has completed the game and the maximum number of attempts. After the tenth round, the game ends and a text is displayed stating whether the user has won or not.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+  ![Number of Attempts](/assets/images/score.jpg)
 
-To log into the Heroku toolbelt CLI:
+### The Score Area 
+- This section will allow the user to see exactly how many winnings he has and how much his opponent has.
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+  ![The Score Area](/assets/images/score-area.jpg)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## Testing
 
----
+Please refer to the [Testing.md](Testing.md) file for all test-related documentation.
 
-Happy coding!
+## Deployment
+
+
+- The site was deployed to GitHub pages. The steps to deploy are as follows:
+
+  - In the GitHub repository, navigate to the Settings tab
+  - From the source section drop-down menu, select the Master Branch
+  - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+The live link can be found [here](https://8000-vladayslava-rockpapersc-ksamjqpl6vj.ws-eu114.gitpod.io/)
+
+## Credits
+- Images
+  * all photos of the game instructions are taken from the website [here](https://ru.wikihow.com/%D0%B8%D0%B3%D1%80%D0%B0%D1%82%D1%8C-%D0%B2-%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C-%E2%80%93-%D0%BD%D0%BE%D0%B6%D0%BD%D0%B8%D1%86%D1%8B-%E2%80%93-%D0%B1%D1%83%D0%BC%D0%B0%D0%B3%D0%B0,-%D1%8F%D1%89%D0%B5%D1%80%D0%B8%D1%86%D0%B0-%E2%80%93-%D0%A1%D0%BF%D0%BE%D0%BA)
