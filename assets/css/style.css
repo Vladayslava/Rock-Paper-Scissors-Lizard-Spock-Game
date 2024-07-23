@@ -1,28 +1,57 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    margin: 0;
+}
 
-h1, h2, h3 {
+html {
+    height: 100%;
+    background: #eeeeeec7;
+}
+
+h1,
+h2,
+h3 {
     font-size: 2rem;
     color: #252525;
 }
-li{
+
+li,
+p {
     font-size: 1.3rem;
-}
-p{
-    font-size: 1.3rem;
-}
-img{
-    width:60%;
 }
 
-body{
-    font-family: 'Times New Roman', Times, serif; 
-    margin-left: 15%;
-    margin-right: 15%;
+img {
+    width: 60%;
+}
+
+  /* Layout Styles */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.wrapper {
+    min-height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background: #eeeeeec7;
-    }
-.btn, .round-count{
+}
+
+  /* Specific Element Styles */
+
+.weapon_choise {
+    transform: scale(2);
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+.btn,
+.round-count {
     border-radius: 5px;
     color: white;
     background: #0a90def0;
@@ -30,153 +59,360 @@ body{
     font-size: 1.3em;
     cursor: pointer;
 }
-.round-count{
+
+.round-count {
     background: orange;
     max-width: 100px;
     cursor: default;
+    margin: 0;
 }
-.game-area{
+
+.game-area {
+    position: relative;
     display: flex;
     padding: 10px;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    background-color: rgb(169, 190, 236);  
+    background-color: rgb(169, 190, 236);
     gap: 20px;
+    margin-bottom: 20px;
 }
+
 .controls-area {
     display: flex;
     align-items: center;
-    flex-direction: column;
-    width: 50%;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 13px;
+    flex: 1;
 }
-.controls-area button:hover{
+
+.controls-area button:hover {
     transform: scale(1.1);
 }
-.controls-area button{
+
+.controls-area button {
     font-size: 2.3em;
 }
-.top-buttons, .bottom-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 13px;
-}
-.showing-area{
+
+.showing-area {
     display: grid;
     border-radius: 5px;
     color: white;
     background: #0a90def0;
-    width: 50%;
+    flex: 1;
     padding: 1.5rem;
     font-size: 5rem;
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     height: 140px;
     align-items: center;
+    margin: 0;
 }
-.score-area{
+
+.score-area {
+    list-style: none;
     font-size: 1.5rem;
     margin: 30px 0px;
 }
-/* .btn_start, .round-count {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-} */
-.btn_start_newgame, .btn_next_round_count{
+
+.btn_next_round_count {
     display: flex;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    justify-content: space-between;
+    justify-self: end;
 }
-.btn_start, .round-count{
+
+.btn_start,
+.round-count {
     flex: 0.8;
     display: flex;
     justify-content: center;
 }
-.btn_next_round {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
+
+.btn_next-round {
+    display: none;
 }
-.your-area, .computers-area {
+
+.btn_next-round:disabled {
+    opacity: 0.5;
+    animation: none;
+}
+
+.your-area,
+.computers-area {
     font-size: 1.5rem;
     display: flex;
     justify-content: center;
 }
-.user-weapon, .computer-weapon{
+
+.user-weapon,
+.computer-weapon {
     display: flex;
     height: 100%;
     flex-direction: column;
 }
-@media (max-width:768px) {
-    body {
-        margin-left: 10%;
-        margin-right: 10%;
-    }
 
-    h1, h2, h3 {
-        font-size: 1.5rem;
-    }
+.new-game-btn {
+    display: none;
+}
 
-    li, p {
-        font-size: 1.2rem;
-    }
+.hide {
+    display: none;
+}
 
-    .game-area {
-        flex-direction: column;
+.computer_score,
+.player_score {
+    font-weight: bold;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+  /* Modal window */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.game-weapons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 0;
+}
+
+.game-weapons_item {
+    list-style: none;
+}
+
+.game-weapons_item img {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+}
+
+.selection {
+    justify-content: center;
+    width: auto;
+    flex-basis: 81px;
+}
+
+.selection:disabled {
+    opacity: 0.5;
+}
+
+.btn_start_newgame {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.btn.gradient-background {
+    background: linear-gradient(45deg, lightblue, skyblue, dodgerblue, cornflowerblue, steelblue);
+    background-size: 600% 600%;
+    animation: gradient 10s infinite;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+/* How to add a gradient overlay to text with CSS
+  * Source: https://fossheim.io/writing/posts/css-text-gradient/
+  */
+.status-game {
+    font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient(45deg, lightblue, skyblue, dodgerblue, cornflowerblue, steelblue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+@keyframes gradient {
+    0% {
+    background-position: 0% 50%;
     }
-    .showing-area{
-        margin-top: 1rem;
-        width: 80%;
+    50% {
+    background-position: 100% 50%;
     }
-    .game-area{
-        padding: 25px;
-    }
-     .top-buttons, .bottom-buttons {
-        gap: 40px;
-        display: flex;
-    } 
-    .controls-area button {
-        font-size: 2.7rem;
-        display: flex;
-        align-items: flex-start;
+    100% {
+    background-position: 0% 50%;
     }
 }
 
-@media (max-width:480px) {
-    h1, h2, h3 {
-        font-size: 1.2rem;
+.statistics_info {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_text {
+    color: black;
+    font-size: 20px;
+    text-align: center;
+}
+
+.weapon_choise {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    body {
+    margin-left: 10%;
+    margin-right: 10%;
     }
 
-    li, p {
-        font-size: 0.9rem;
+    h1,
+    h2,
+    h3 {
+    font-size: 1.5rem;
     }
-    img {
-        width: 80%;
+
+    li,
+    p {
+    font-size: 1.2rem;
     }
-    .btn, .round-count {
-        padding: 0.5rem;
-        font-size: 1rem;
+    .header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     }
-    .showing-area{
-        margin: 0;
+    .heading {
+    text-align: center;
+    grid-column: 1/3;
+    grid-row: 2;
     }
-    .top-buttons, .bottom-buttons {
-        display: flex;
-        gap: 13px;
+    .btn-rules {
+    justify-self: flex-end;
     }
+    .game-area {
+    flex-direction: column;
+    }
+
+    .showing-area {
+    margin-top: 1rem;
+    width: 80%;
+    }
+
+    .top-buttons,
+    .bottom-buttons {
+    gap: 40px;
+    display: flex;
+    }
+
     .controls-area button {
-        font-size: 2rem;
+    font-size: 2.7rem;
+    display: flex;
+    align-items: flex-start;
     }
+
+    .controls-area {
+    width: 100%;
+    }
+    .game-weapons {
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    h1,
+    h2,
+    h3 {
+    font-size: 1.2rem;
+    }
+
+    li,
+    p {
+    font-size: 0.9rem;
+    }
+
+    img {
+    width: 80%;
+    }
+
+    .btn,
+    .round-count {
+    padding: 0.5rem;
+    font-size: 1rem;
+    }
+
+    .showing-area {
+    margin: 0;
+    }
+
+    .top-buttons,
+    .bottom-buttons {
+    display: flex;
+    gap: 13px;
+    }
+
+    .controls-area button {
+    font-size: 2rem;
+    }
+
     .score-area {
-        font-size: 1rem;
-        margin: 30px 0px;
+    font-size: 1rem;
+    margin: 30px 0;
     }
-    .btn{
-        padding: 0.8rem;
+
+    .btn {
+    padding: 0.8rem;
     }
-    .btn_start, .round-count {
-        flex: 0.6;
-        align-items: center;
+
+    .btn_start,
+    .round-count {
+    flex: 0.6;
+    align-items: center;
+    }
+
+    .game-weapons {
+    grid-template-columns: 1fr;
     }
 }
