@@ -1,9 +1,9 @@
 /* jshint esversion:8 */
 let playerScore = 0;
 let computerScore = 0;
-let currentWinner;
 let currentRound = 0;
-const maxRound = 10;
+let currentWinner;
+
 const controlsButtons = document.querySelectorAll('[data-type]');
 const playerCurrentChoice = document.getElementById('player-current-choice');
 const computerCurrentChoice = document.getElementById('computer-current-choice');
@@ -12,23 +12,11 @@ const startBtn = document.getElementById('start-btn');
 const nextRoundBtn = document.getElementById('next-round-btn');
 const currentRoundContainer = document.getElementById('current-round');
 const resultDisplay = document.getElementById('final-result');
-const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+const actionsButton = document.querySelector('.btn_start_newgame');
+const userInfoBlock = document.querySelector('.btn_next_round_count');
+
 newGameBtn.style.visibility = 'hidden';
 nextRoundBtn.style.visibility = 'hidden';
-const emojiMap = {
-    rock: '👊',
-    paper: '✋',
-    scissors: '✌️',
-    lizard: '🦎',
-    spock: '🖖'
-};
-const winningConditions = {
-    rock: ['scissors','lizard'],
-    paper: ['rock', 'spock'],
-    scissors: ['paper', 'lizard'],
-    lizard: ['spock', 'paper'],
-    spock: ['scissors', 'rock']
-};
 
 controlsButtons.forEach(
     function(button){
