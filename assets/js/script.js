@@ -20,32 +20,19 @@ nextRoundBtn.addEventListener('click', nextRound);
 startBtn.addEventListener('click', startGame);
 newGameBtn.addEventListener('click', newGame);
 
-controlsButtons.forEach(
-    function(button){
-        button.disabled = true;
-});
-
-// controlsButtons.forEach(
-//     function (controlsButtons){
-//         controlsButtons.addEventListener('click', function(event){
-//           const controlsWeapon = controlsButtons.getAttribute('data-type');
-//            makeSelection(controlsWeapon);
-//            disableControlButtons();
-//             });
-//         });
-
-controlsButtons.forEach(showingButtons);
-
-/**The function retrieves the value of the data-type attribute from the controlsButtons element.
-Calls the makeSelection function with this value.
-Calls the disableControlButtons function */
-function showingButtons(controlsButtons){
-    controlsButtons.addEventListener('click', function(event){
-        const controlsWeapon = controlsButtons.getAttribute('data-type');
-        makeSelection(controlsWeapon);
-        disableControlButtons();
-});
-    }
+/**
+ * The function gets the value of the data-type attribute from the controlsButtons element.
+ * Calls the makeSelection function with this value.
+ * Turns on the nextRoundBtn button and calls the controlListElementsDisabled function to disable the control buttons.
+ */
+function showingButtons(controlsButton) {
+    controlsButton.addEventListener('click', function () {
+    const controlsWeapon = controlsButton.getAttribute('data-type');
+    nextRoundBtn.disabled = false;
+    makeSelection(controlsWeapon);
+    controlListElementsDisabled(controlsButtons, true);
+    });
+}
 
 /**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
 function disableControlButtons(){
