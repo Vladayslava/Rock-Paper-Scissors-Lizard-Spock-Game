@@ -75,6 +75,18 @@ function nextRound() {
     });
 })();
 
+/**
+ * Game start function.
+ * Enables game controls and hides the start and new game buttons.
+ */
+function startGame() {
+    userInfoBlock.classList.remove('flex-end');
+    controlElementShowValue(actionsButton, 'none');
+    controlElementShowValue(startBtn, 'none');
+    controlElementShowValue(nextRoundBtn, 'block');
+    nextRound();
+}
+
 
 /**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
 function disableControlButtons(){
@@ -84,21 +96,6 @@ function disableControlButtons(){
             nextRoundBtn.disabled = false;
     });  
 
-}
-
-startBtn.addEventListener('click',startGame);
-/**The function enables the game control buttons 
- * and hides the start and new game buttons to commence the game and proceed to the next round. */
-function startGame(){
-    controlsButtons.forEach(
-        function(button){
-            button.disabled = false;
-        });
-        startBtn.style.visibility = 'hidden';
-        newGameBtn.style.visibility = 'hidden';
-        newGameBtn.style.visibility = 'hidden';
-        nextRoundBtn.style.visibility = 'visible';
-        nextRoundBtn.disabled = false;
 }
 
 newGameBtn.addEventListener('click',newGame);
