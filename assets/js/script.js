@@ -15,8 +15,10 @@ const resultDisplay = document.getElementById('final-result');
 const actionsButton = document.querySelector('.btn_start_newgame');
 const userInfoBlock = document.querySelector('.btn_next_round_count');
 
-newGameBtn.style.visibility = 'hidden';
-nextRoundBtn.style.visibility = 'hidden';
+controlsButtons.forEach(showingButtons);
+nextRoundBtn.addEventListener('click', nextRound);
+startBtn.addEventListener('click', startGame);
+newGameBtn.addEventListener('click', newGame);
 
 controlsButtons.forEach(
     function(button){
