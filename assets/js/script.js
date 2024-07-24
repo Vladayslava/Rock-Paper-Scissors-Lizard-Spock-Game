@@ -34,6 +34,15 @@ function showingButtons(controlsButton) {
     });
 }
 
+/**
+ * Function for moving to the next round.
+ * Disables the nextRoundBtn button and enables the control buttons.
+ */
+function nextRound() {
+    nextRoundBtn.disabled = true;
+    controlListElementsDisabled(controlsButtons, false);
+}
+
 /**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
 function disableControlButtons(){
     controlsButtons.forEach(
