@@ -43,6 +43,39 @@ function nextRound() {
     controlListElementsDisabled(controlsButtons, false);
 }
 
+(function () {
+    const rulesBtn = document.getElementById('rules-btn');
+    const rulesModal = document.getElementById('rules-modal');
+    const closeBtn = rulesModal.querySelector('.close-btn');
+
+    /**
+     * Adds an event listener to the rulesBtn button.
+     * When the rulesBtn button is clicked, it shows the modal window with the rules.
+     */
+    rulesBtn.addEventListener('click', () => {
+    rulesModal.style.display = 'block';
+    });
+
+    /**
+     * Adds an event listener to the closeBtn button.
+     * When the closeBtn button is clicked, it hides the modal window with the rules.
+     */
+    closeBtn.addEventListener('click', () => {
+    rulesModal.style.display = 'none';
+    });
+
+    /**
+     * Adds an event listener to the window object.
+     * If the user clicks outside the modal window, it closes.
+     */
+    window.addEventListener('click', (event) => {
+    if (event.target === rulesModal) {
+        rulesModal.style.display = 'none';
+    }
+    });
+})();
+
+
 /**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
 function disableControlButtons(){
     controlsButtons.forEach(
@@ -51,18 +84,6 @@ function disableControlButtons(){
             nextRoundBtn.disabled = false;
     });  
 
-}
-
-nextRoundBtn.addEventListener('click', nextRound);
-/**The function iterates over all controlsButtons elements and for each element:
-Enables the button (sets disabled to false).
-Disables the nextRoundBtn button (sets disabled to true). */
-function nextRound(){
-    controlsButtons.forEach(
-        function(button){
-            button.disabled = false;
-            nextRoundBtn.disabled = true;
-    });  
 }
 
 startBtn.addEventListener('click',startGame);
