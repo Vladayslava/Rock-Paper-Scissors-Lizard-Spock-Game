@@ -112,6 +112,24 @@ function newGame() {
     currentRoundContainer.innerText = currentRound;
 }
 
+/**
+ * The function of processing the user's choice in the game.
+ * Increments the current round, shows the player's and computer's choices, and determines the winner of the round,
+ * updates the player's and computer's scores, and if the maximum round is reached,
+ * shows the final score and makes the button for the new game visible.
+ */
+function makeSelection(userChoice) {
+    currentRound = updateScore(currentRoundContainer, currentRound);
+    updatePlayerChoice(userChoice, EMOJI_MAP);
+    const computerChoice = updateComputerChoice(EMOJI_MAP);
+    currentWinner = isWinner(userChoice, computerChoice);
+    updateScores(currentWinner);
+    if (currentRound === MAX_ROUND) {
+    finishGame(playerScore, computerScore);
+    setGamesPoints(currentWinner);
+    }
+}
+
 /**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
 function disableControlButtons(){
     controlsButtons.forEach(
@@ -122,32 +140,7 @@ function disableControlButtons(){
 
 }
 
-/**
-*This function handles the user's selection in the "rock-paper-scissors-lizard-Spock" game. 
-*It increments the current round, displays the player's and computer's choices, determines the winner of the current round, 
-*updates the player and computer scores, 
-*and if the maximum round is reached, 
-*it displays the final result and makes the button for starting a new game visible.
- */
-function makeSelection(userChoice){
-    currentRound++;
-    currentRoundContainer.innerText = currentRound;
-    playerCurrentChoice.innerHTML = emojiMap[userChoice];
-    const computerChoice = getRandomChoice();
-    computerCurrentChoice.innerHTML = emojiMap[computerChoice];
-    currentWinner = isWinner(userChoice, computerChoice);
-    updateScores(currentWinner);
-    if(currentRound===maxRound){
-        displayResult(playerScore, computerScore);
-        controlsButtons.forEach(
-            function(button){
-                button.disabled = true;
-                newGameBtn.style.visibility = 'visible';
-                newGameBtn.disabled = false;
-                nextRoundBtn.style.visibility = 'hidden';
-        });      
-    }
-}
+    
 /**This function determines the winner in a game between the user and the computer based on their choices. 
  * If the user's choice and the computer's choice are the same, the function returns 'tie'. 
  * If the user's choice beats the computer's choice according to pre-defined conditions (winningConditions), the function returns 'user'. 
