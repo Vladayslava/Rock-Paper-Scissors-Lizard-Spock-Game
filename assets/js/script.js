@@ -88,6 +88,30 @@ function startGame() {
 }
 
 
+/**
+ * The function of starting a new game.
+ * Resets current results, sets player and computer scores to zero,
+ * adjusts the visibility of the buttons for the new game and the next round,
+ * and resets the current round to zero.
+ * Source: https://stackoverflow.com/questions/28744682/the-best-way-to-reset-your-javascript-game-after-gameover-and-how
+ */
+function newGame() {
+    startGame();
+    const playerElem = document.querySelector('.player_score');
+    const computerElem = document.querySelector('.computer_score');
+
+    controlElementShowValue(newGameBtn, 'none');
+    playerCurrentChoice.innerHTML = '';
+    computerCurrentChoice.innerHTML = '';
+    resultDisplay.innerHTML = '';
+    playerScore = 0;
+    computerScore = 0;
+    currentRound = 0;
+    playerElem.textContent = playerScore;
+    computerElem.textContent = computerScore;
+    currentRoundContainer.innerText = currentRound;
+}
+
 /**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
 function disableControlButtons(){
     controlsButtons.forEach(
@@ -98,26 +122,6 @@ function disableControlButtons(){
 
 }
 
-newGameBtn.addEventListener('click',newGame);
-/**The function is used to start a new game. It resets the current results, sets player and computer scores to zero,
- *  adjusts the visibility of buttons for a new game and the next round, and updates the current round to 0. */
-function newGame(){
-    controlsButtons.forEach(
-          function(buttons){
-              buttons.disabled = false;
-          });
-    playerCurrentChoice.innerHTML = '';
-    computerCurrentChoice.innerHTML = '';
-    playerScore = 0;
-    computerScore = 0;
-    document.getElementsByClassName('player_score')[0].textContent = playerScore;
-    document.getElementsByClassName('computer_score')[0].textContent = computerScore;
-    resultDisplay.innerHTML = '';
-    newGameBtn.style.visibility = 'hidden';
-    nextRoundBtn.style.visibility = 'visible';
-    currentRound = 0;
-    currentRoundContainer.innerText = currentRound;
-}
 /**
 *This function handles the user's selection in the "rock-paper-scissors-lizard-Spock" game. 
 *It increments the current round, displays the player's and computer's choices, determines the winner of the current round, 
