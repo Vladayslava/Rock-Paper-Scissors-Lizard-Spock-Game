@@ -175,6 +175,29 @@ function updateScores(winner) {
     }
 }
 
+/**
+ * The function shows the result of the game between the player and the computer based on their scores.
+ * If the player and the computer have the same score, the function displays “It's a tie!”.
+ * If the player's score is higher than the computer's, the function displays “You win!”.
+ * If the player's score is lower than the computer's, it shows “You lose!”
+ * Source: https://www.w3schools.com/js/js_switch.asp
+ */
+function displayResult(playerScore, computerScore) {
+    let message;
+    switch (true) {
+    case playerScore === computerScore:
+        message = WINNER_MESSAGE.tie;
+        break;
+    case playerScore > computerScore:
+        message = WINNER_MESSAGE.user;
+        break;
+    default:
+        message = WINNER_MESSAGE.computer;
+    }
+    resultDisplay.textContent = message;
+    return message;
+}
+
 /**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
 function disableControlButtons(){
     controlsButtons.forEach(
@@ -182,24 +205,6 @@ function disableControlButtons(){
             button.disabled = true;
             nextRoundBtn.disabled = false;
     });  
-
-}
-
-
-/**This function displays the result of a game between a player and a computer based on their scores. 
- * If the player's score equals the computer's score, the function displays "It's a tie!". 
- * If the player's score is greater than the computer's score, it displays "You win!". 
- * If the player's score is less than the computer's score, it displays "You lose!". */
-function displayResult(playerScore, computerScore){
-    if(playerScore === computerScore){
-        resultDisplay.textContent = `It's a tie!`;
-    }
-    else if(playerScore > computerScore){
-        resultDisplay.textContent = `You win!`;
-    }
-    else{
-        resultDisplay.textContent = `You lose!`;
-    }
 
 }
 
