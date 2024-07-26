@@ -211,4 +211,10 @@ function finishGame(playerScore, computerScore) {
     displayResult(playerScore, computerScore);
 }
 
+/**
+ * Function to update the player's selection.
+ */
+function updatePlayerChoice(userChoice, emojiMap) {
+    playerCurrentChoice.innerHTML = emojiMap[userChoice];
+}
 
