@@ -253,3 +253,19 @@ function updateScore(element, score) {
     element.textContent = score;
     return score;
 }
+
+/**
+ * Function for setting game points.
+ * Increments the score of the current winner by 1, updates the text content of the element,
+ * and returns the new score.
+ */
+function setGamesPoints(currentWinner) {
+    const playerElem = document.querySelector('.player_total-game');
+    const computerElem = document.querySelector('.computer_total-game');
+
+    if (currentWinner === WINNER_ROLES.user) {
+    playerScore = updateScore(playerElem, parseInt(playerElem.textContent));
+    } else if (currentWinner === WINNER_ROLES.computer) {
+    computerScore = updateScore(computerElem, parseInt(computerElem.textContent));
+    }
+}
