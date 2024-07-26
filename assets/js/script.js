@@ -218,3 +218,13 @@ function updatePlayerChoice(userChoice, emojiMap) {
     playerCurrentChoice.innerHTML = emojiMap[userChoice];
 }
 
+
+/**
+ * Function to update the computer selection.
+ * Returns the computer selection.
+ */
+function updateComputerChoice(emojiMap) {
+    const computerChoice = getRandomChoice();
+    computerCurrentChoice.innerHTML = emojiMap[computerChoice];
+    return computerChoice;
+}
