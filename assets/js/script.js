@@ -198,13 +198,17 @@ function displayResult(playerScore, computerScore) {
     return message;
 }
 
-/**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
-function disableControlButtons(){
-    controlsButtons.forEach(
-        function(button){
-            button.disabled = true;
-            nextRoundBtn.disabled = false;
-    });  
-
+/**
+ * End game function.
+ * Makes the button for the new game visible, shows the action buttons and hides the next round button.
+ * Displays the result of the game.
+ */
+function finishGame(playerScore, computerScore) {
+    controlElementShowValue(newGameBtn, 'block');
+    controlElementShowValue(actionsButton, 'flex');
+    controlElementShowValue(nextRoundBtn, 'none');
+    userInfoBlock.classList.add('flex-end');
+    displayResult(playerScore, computerScore);
 }
+
 
