@@ -235,3 +235,10 @@ function updateComputerChoice(emojiMap) {
 function controlListElementsDisabled(list, choise) {
     list.forEach((button) => (button.disabled = choise));
 }
+
+/**
+ * A function to control the visibility of elements.
+ */
+function controlElementShowValue(element, value) {
+    element.style.display = value;
+}
