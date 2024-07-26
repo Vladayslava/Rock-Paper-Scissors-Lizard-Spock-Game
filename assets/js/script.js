@@ -130,6 +130,24 @@ function makeSelection(userChoice) {
     }
 }
 
+/**
+ * The function of determining the winner between the user and the computer based on their choices.
+ * If the user and computer choices are the same, 'tie' is returned.
+ * If the user's choice wins the computer's choice, 'user' is returned.
+ * Otherwise, 'computer' is returned.
+ */
+function isWinner(userChoice, computerChoice) {
+    const IS_USER_WINNER = WINNING_CONDITIONS[userChoice].includes(computerChoice);
+    const IS_TIE = userChoice === computerChoice;
+    if (IS_TIE) {
+    return WINNER_ROLES.tie;
+    } else if (IS_USER_WINNER) {
+    return WINNER_ROLES.user;
+    } else {
+    return WINNER_ROLES.computer;
+    }
+}
+
 /**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
 function disableControlButtons(){
     controlsButtons.forEach(
@@ -140,22 +158,7 @@ function disableControlButtons(){
 
 }
 
-    
-/**This function determines the winner in a game between the user and the computer based on their choices. 
- * If the user's choice and the computer's choice are the same, the function returns 'tie'. 
- * If the user's choice beats the computer's choice according to pre-defined conditions (winningConditions), the function returns 'user'. 
- * Otherwise, the function returns 'computer', indicating that the computer has won. */
-function isWinner(userChoice, computerChoice){
-    if(userChoice===computerChoice){
-        return 'tie';
-    }
-    else if (winningConditions[userChoice].includes(computerChoice)) {
-        return 'user';
-    }
-    else {
-        return 'computer';
-    }
-}
+
 /**This function returns a random element from the array choices. */
 function getRandomChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
