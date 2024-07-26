@@ -228,3 +228,10 @@ function updateComputerChoice(emojiMap) {
     computerCurrentChoice.innerHTML = emojiMap[computerChoice];
     return computerChoice;
 }
+
+/**
+ * Function for monitoring the status of buttons.
+ */
+function controlListElementsDisabled(list, choise) {
+    list.forEach((button) => (button.disabled = choise));
+}
