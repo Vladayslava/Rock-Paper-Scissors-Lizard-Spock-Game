@@ -148,6 +148,33 @@ function isWinner(userChoice, computerChoice) {
     }
 }
 
+/**
+ * The function returns a random selection from the choices array.
+ * Simple implementation from Stack Overflow.
+ * Source: https://stackoverflow.com/questions/4550505/getting-a-random-value-from-a-javascript-array
+ *
+ */
+function getRandomChoice() {
+    return CHOICES[Math.floor(Math.random() * CHOICES.length)];
+}
+
+/**
+ * The function of updating the game scores.
+ * If the winner is a user (winner is equal to 'user'), increases playerScore by 1
+ * and updates the text content of the element with class 'player_score' with the new playerScore value.
+ * If the winner is a computer (winner is 'computer'), increments the computerScore by 1
+ * and updates the text content of the element with class 'computer_score' with the new computerScore value.
+ */
+function updateScores(winner) {
+    const playerElem = document.querySelector('.player_score');
+    const computerElem = document.querySelector('.computer_score');
+    if (winner === WINNER_ROLES.user) {
+    playerScore = updateScore(playerElem, playerScore);
+    } else if (winner === WINNER_ROLES.computer) {
+    computerScore = updateScore(computerElem, computerScore);
+    }
+}
+
 /**The function disables all buttons in the controlsButtons array and enables the nextRoundBtn button. */
 function disableControlButtons(){
     controlsButtons.forEach(
@@ -159,24 +186,6 @@ function disableControlButtons(){
 }
 
 
-/**This function returns a random element from the array choices. */
-function getRandomChoice() {
-    return choices[Math.floor(Math.random() * choices.length)];
-}
-/**This function updates the game scores based on the winner. If the winner is the user (winner equals 'user'), it increments the playerScore variable by 1 
- * and updates the text content of an element with the class 'player_score' with the new playerScore value. 
- * If the winner is the computer (winner equals 'computer'), it increments the computerScore variable by 1 
- * and updates the text content of an element with the class 'computer_score' with the new computerScore value. */
-function updateScores(winner){
-    if(winner==='user'){
-        playerScore++;
-        document.getElementsByClassName('player_score')[0].textContent = playerScore;
-    }
-    else if(winner==='computer'){
-        computerScore++;
-        document.getElementsByClassName('computer_score')[0].textContent = computerScore;
-    }
-}
 /**This function displays the result of a game between a player and a computer based on their scores. 
  * If the player's score equals the computer's score, the function displays "It's a tie!". 
  * If the player's score is greater than the computer's score, it displays "You win!". 
