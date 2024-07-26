@@ -242,3 +242,14 @@ function controlListElementsDisabled(list, choise) {
 function controlElementShowValue(element, value) {
     element.style.display = value;
 }
+
+/**
+ * Function for updating the score.
+ * Increments the score by 1, updates the text content of the element
+ * and returns the new count.
+ */
+function updateScore(element, score) {
+    score++;
+    element.textContent = score;
+    return score;
+}
