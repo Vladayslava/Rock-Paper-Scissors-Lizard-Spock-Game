@@ -96,6 +96,8 @@ Please refer to the [TESTING.md](TESTING.md) file for all test-related documenta
   - From the source section drop-down menu, select the Master Branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
+  The live link can be found [here](https://8000-vladayslava-rockpapersc-mntrf0qz9r1.ws.codeinstitute-ide.net/)
+
 ## Sources
 
 ### Images
