@@ -7,47 +7,81 @@ The target audience for this project includes children, teenagers, and adults lo
 
 ## Features
 
-### The Start Button
++ ### Home page
 
-- The "Start" button is designed to start the game. When the user clicks on this button, the following happens:
-  - The "weapon" buttons that the user will use to play the game are launched.
-  - The next round button appears.
+On the home page, in the upper left corner, there is a game logo followed by the game name and a button that takes you to the game rules page.
+Below is a short description and the game.
+The Footer section occupies the bottom of the page.
 
-![The Start Button](/assets/images/btn-start.jpg)
+![Home page](/assets/images/Home%20page.png)
 
-### The Weapon Selection Area
++ #### The Show Rules Button
 
-- This section will allow the user to play the game. The user will be able to easily see the weapon icons and select, as desired by clicking on the different icons.
+  - The show rules button is always activated and is located at the very top of the page. When clicked, the user goes to the rules page without interrupting the game if the user has started it.
+
+  ![The Show Rules Button](/assets/images/btn-show-rules.jpg)
+
++ #### The Start Button
+
+  - The "Start" button is designed to start the game. When the user clicks on this button, the following happens:
+    - The "weapon" buttons that the user will use to play the game are launched.
+    - The next round button appears.
+
+  ![The Start Button](/assets/images/btn-start.jpg)
+
++ #### The Weapon Selection Area
+
+  - This section will allow the user to play the game. The user will be able to easily see the weapon icons and select, as desired by clicking on the different icons.
 
 ![The Weapon Selection Area](/assets/images/btns.jpg)
 
-### The Showing Area
++ #### The Showing Area
 
-- In this section, the user can see his choice of weapons and choice of computer. After selecting a user, the computer makes a random selection and displays icons.
+  - In this section, the user can see his choice of weapons and choice of computer. After selecting a user, the computer makes a random selection and displays icons.
 
-![The Showing Area](/assets/images/showing-area.jpg)
+  ![The Showing Area](/assets/images/showing-area.jpg)
 
-### The Next Round Button
++ #### The Next Round Button
 
-- after the user selects a weapon, the selection buttons are blocked until the user presses the next round, after which the user and computer score is counted, as well as the attempt count is counted.
+  - after the user selects a weapon, the selection buttons are blocked until the user presses the next round, after which the user and computer score is counted, as well as the attempt count is counted.
 
-![The Next Round Button](/assets/images/btn-next-round.jpg)
+  ![The Next Round Button](/assets/images/btn-next-round.jpg)
 
-### Number of Attempts
++ #### Number of Attempts
 
-- In this area, the user can see how many times he has completed the game and the maximum number of attempts. After the tenth round, the game ends and a text is displayed stating whether the user has won or not.
+  - In this area, the user can see how many times he has completed the game and the maximum number of attempts. After the tenth round, the game ends and a text is displayed stating whether the user has won or not.
 
   ![Number of Attempts](/assets/images/score.jpg)
 
-### The Score Area
++ #### The Game Statistics Area
 
-- This section will allow the user to see exactly how many winnings he has and how much his opponent has.
-  а
-  ![The Score Area](/assets/images/score-area.jpg)
+  - This section will allow the user to see exactly how many winnings he has and how much his opponent has.
+
+  ![The Game Statistics Area](/assets/images/game-statistics.jpg)
+
++ #### The All Rounds Area
+
+  - This section will allow the user to see the score for all the rounds the user has played.
+
+  ![The All Rounds Area](/assets/images/all-rounds.jpg)
+
++ #### Footer
+
+  - The footer contains the game title and year of release.
+
+  ![Footer](/assets/images/footer.jpg)
+
++ ### Rules page
+
+  - The rules page describes what each weapon means and under it are pictures that illustrate which weapon in the game is superior to other weapons. 
+  - The rules can be closed with a cross or by clicking on the black background, the rules will automatically close and take the user to the main page.
+
+  ![Rules page](/assets/images/show%20rules(1).jpg)
+  ![Rules page](/assets/images/show%20rules(2).jpg)
 
 ## Testing
 
-Please refer to the [Testing.md](Testing.md) file for all test-related documentation.
+Please refer to the [TESTING.md](Testing.md) file for all test-related documentation.
 
 ## Design
 

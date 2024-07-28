@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <!-- Meta tags for search engines -->
-    <meta name="description"
-    content="Addictive 'rock-paper-scissors-lizard-spock' game with ten game attempts">
+    <meta name="description" content="Addictive 'rock-paper-scissors-lizard-spock' game with ten game attempts">
     <meta name="keywords" content="game, entertainment, competition, tournament, victory, defeat">
     <!-- Title -->
     <title>Game rock-paper-scissors-lizard-spock</title>
     <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.17.2.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -26,55 +29,57 @@
         <main>
             <div id="rules-modal" class="modal">
                 <div class="modal-content">
-                    <span class="close-btn">&times;</span> 
+                    <span class="close-btn">&times;</span>
                     <h2>How to play?</h2>
                     <h3>Signs include the following:</h3>
                     <ul class="game_signs">
                         <li>The stone is a clenched fist.</li>
                         <li>Scissors - clench your palm and extend your index and middle fingers.</li>
                         <li>Paper – straighten all your fingers.</li>
-                        <li>Lizard – All fingers should be straight and cupped, with the thumb lower than the rest to look like a doll.</li>
+                        <li>Lizard – All fingers should be straight and cupped, with the thumb lower than the rest to
+                            look
+                            like a doll.</li>
                         <li>Spock - the traditional Vulcan greeting from Star Trek.</li>
                     </ul>
                     <h3>Find out how each "weapon" in the game beats other weapons.</h3>
-                    <ul class="game_weapons">
+                    <ul class="game-weapons">
                         <li class="game-weapons_item">
                             <span class="weapon-description">Scissors cut paper.</span>
                             <img src="assets/images/1.jpeg" alt="Scissors cutting paper">
                         </li>
-                        <li class="game-weapons_item">The paper covers the stone.
+                        <li class="game-weapons_item">
                             <span class="weapon-description">Paper covers rock.</span>
                             <img src="assets/images/2.jpeg" alt="Paper covering rock">
                         </li>
-                        <li class="game-weapons_item">The stone hits the lizard.
+                        <li class="game-weapons_item">
                             <span class="weapon-description">Rock crushes lizard.</span>
                             <img src="assets/images/3.jpeg" alt="Rock crushing lizard">
                         </li>
-                        <li class="game-weapons_item">The lizard releases venom at Spock.
+                        <li class="game-weapons_item">
                             <span class="weapon-description">Lizard poisons Spock.</span>
                             <img src="assets/images/4.jpeg" alt="Lizard poisoning Spock">
                         </li>
-                        <li class="game-weapons_item">Spock breaks the scissors.
+                        <li class="game-weapons_item">
                             <span class="weapon-description">Spock smashes scissors.</span>
                             <img src="assets/images/5.jpeg" alt="Spock smashing scissors">
                         </li>
-                        <li class="game-weapons_item">Scissors cut off the head of a lizard.
+                        <li class="game-weapons_item">
                             <span class="weapon-description">Scissors decapitate lizard.</span>
                             <img src="assets/images/6.jpeg" alt="Scissors decapitating lizard">
                         </li>
-                        <li class="game-weapons_item">The lizard eats the paper.
+                        <li class="game-weapons_item">
                             <span class="weapon-description">Lizard eats paper.</span>
                             <img src="assets/images/7.jpeg" alt="Lizard eating paper">
                         </li>
-                        <li class="game-weapons_item">The paper refutes Spock.
+                        <li class="game-weapons_item">
                             <span class="weapon-description">Paper disproves Spock.</span>
                             <img src="assets/images/8.jpeg" alt="Paper disproving Spock">
                         </li>
-                        <li class="game-weapons_item">Spock turns the stone into steam.
+                        <li class="game-weapons_item">
                             <span class="weapon-description">Spock vaporizes rock.</span>
                             <img src="assets/images/9.jpeg" alt="Spock vaporizing rock">
                         </li>
-                        <li class="game-weapons_item">And, as always, the stone hits the scissors.
+                        <li class="game-weapons_item">
                             <span class="weapon-description">Rock crushes scissors.</span>
                             <img src="assets/images/10.jpeg" alt="Rock crushing scissors">
                         </li>
@@ -82,14 +87,17 @@
                 </div>
             </div>
             <h2>Play online</h2>
-            <p>Below you see images of rock, paper, scissors, lizard, spock. Left-click on the picture depicting the 
-                item you want to select. After this, the computer will select its item. The one who is more cunning wins.
+            <p>Below you see images of rock, paper, scissors, lizard, spock. Left-click on the picture depicting the
+                item you want to select. After this, the computer will select its item. The one who is more cunning
+                wins.
             </p>
+
 
 
             <div class="game-area">
                 <div class="btn_start_newgame">
-                    <button type="button" name="button" id="new-game-btn" class="btn new-game-btn">New game</button>
+                    <button type="button" name="button" id="new-game-btn" class="btn new-game-btn">New
+                        game</button>
                     <button type="button" name="button" id="start-btn" class="btn">Start</button>
                 </div>
                 <div class="controls-area">
@@ -125,7 +133,8 @@
             </div>
             <div class="btn_next_round_count flex-end">
                 <button type="button" name="button" id="next-round-btn" class="btn btn_next-round gradient-background"
-                    disabled> Next round</button>
+                    disabled> Next
+                    round</button>
                 <p class="round-count">
                     <span id="current-round">0</span>/10
                 </p>
@@ -136,16 +145,16 @@
                     <p> PLAYER:
                         <span class="player_score">0</span>
                     </p>
- 
+
                     <p> COMPUTER:
                         <span class="computer_score">0</span>
                     </p>
- 
+
                 </li>
                 <li class="score-area">
                     <p id="final-result" class="status-game"></p>
                 </li>
- 
+
                 <li class="score-area">
                     <h2 class="title">All rounds</h2>
                     <p> PLAYER:
@@ -157,14 +166,22 @@
 
                 </li>
             </ul>
-        </main> 
+        </main>
 
-    <footer>
-        <p class="footer_text">
-            &copy; 2024 Game "Rock, Scissors, Paper, Lizard, Spock". All rights reserved
-        </p>
-    </footer>
+        <footer>
+            <p class="footer_text">
+                &copy; 2024 Game "Rock, Scissors, Paper, Lizard, Spock". All rights reserved
+            </p>
+        </footer>
+        <!-- <div id="qunit"></div>
+        <div id="qunit-fixture"></div> -->
+    </div>
+    <!-- <script src="https://code.jquery.com/qunit/qunit-2.17.2.js"></script>
+    <script src="assets/js/test.js"></script> -->
     <script src="assets/js/constants.js"></script>
     <script src="assets/js/script.js"></script>
+
+
 </body>
+
 </html>
