@@ -81,11 +81,7 @@ The Footer section occupies the bottom of the page.
 
 ## Testing
 
-Please refer to the [TESTING.md](Testing.md) file for all test-related documentation.
-
-## Design
-
-Please refer to the [Design.md](Design.md) file for all design documentation.
+Please refer to the [TESTING.md](TESTING.md) file for all test-related documentation.
 
 ## Deployment
 
@@ -95,28 +91,11 @@ Please refer to the [Design.md](Design.md) file for all design documentation.
   - From the source section drop-down menu, select the Master Branch
   - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found [here](https://8000-vladayslava-rockpapersc-ksamjqpl6vj.ws-eu114.gitpod.io/)
-
-## Cloning the Repository
-
-**Link**:https://github.com/Vladayslava/Rock-Paper-Scissors-Lizard-Spock-Game
-
-To clone the repository, follow these steps:
-
-- **Copy the repository URL**:
-  Navigate to the repository on GitHub and copy the HTTPS or SSH URL.
-
-- **Open a terminal**:
-  Open your terminal (or command prompt).
-
-- **Run the clone command**:
-  Use the git clone command followed by the copied URL
-
 ## Sources
 
 ### Images
 
-- logo [here] (https://wizlogo.com/uk)
+- logo [here](https://wizlogo.com/uk)
 - all photos of the game instructions are taken from the website [here](https://ru.wikihow.com/%D0%B8%D0%B3%D1%80%D0%B0%D1%82%D1%8C-%D0%B2-%D0%BA%D0%B0%D0%BC%D0%B5%D0%BD%D1%8C-%E2%80%93-%D0%BD%D0%BE%D0%B6%D0%BD%D0%B8%D1%86%D1%8B-%E2%80%93-%D0%B1%D1%83%D0%BC%D0%B0%D0%B3%D0%B0,-%D1%8F%D1%89%D0%B5%D1%80%D0%B8%D1%86%D0%B0-%E2%80%93-%D0%A1%D0%BF%D0%BE%D0%BA)
 
 ### Code
