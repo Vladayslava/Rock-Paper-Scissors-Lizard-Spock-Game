@@ -65,6 +65,11 @@ The Footer section occupies the bottom of the page.
 
   ![The All Rounds Area](/assets/images/all-rounds.jpg)
 
++ #### The Result Area
+  - In this section the user will be able to see whether he won or lost at the end of the round.
+
+  ![The Result Area](/assets/images/result.jpg)
+
 + #### Footer
 
   - The footer contains the game title and year of release.
